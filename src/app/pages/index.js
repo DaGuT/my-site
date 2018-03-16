@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../../canvas/snake/sketch'
-
+import './main.css'
 
 class IndexPage extends Component {
   render() {
-    return (
-      <div className="App">
-      </div>
-    );
+    return (<div>
+      <div id="Snake"></div>
+    <p className="extraHigh"></p>
+    </div>);
   }
 }
 
