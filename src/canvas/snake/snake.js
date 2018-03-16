@@ -8,10 +8,14 @@ export default class Snake {
 
     //mouse following head
     this.segments.push(new Segment({
+      //initial position
       x:p5.width/2,
       y:p5.height/2,
+      //thickness of that part
       sw:p5.map(segCount,0,segCount,minThickness,maxThickness),
+      //segment length
       len:segLen,
+      //what this segment should follow
       next:'mouse'
     }));
 
