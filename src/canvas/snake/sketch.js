@@ -45,4 +45,5 @@ const sketch = (p5) => {
 
 }
 
+//this canvas will be inserted to element with id="Snake"
 new p5(sketch, 'Snake');
