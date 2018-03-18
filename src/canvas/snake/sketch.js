@@ -13,7 +13,7 @@ import Snake from './snake.js'
  */
 function snakeSketch(snakeElementId_) {
 
-  return (p5) => {
+  return(p5) => {
 
     window.p5 = p5;
     let snake;
@@ -44,9 +44,12 @@ function snakeSketch(snakeElementId_) {
       $(window).on('DOMContentLoaded load resize scroll', handler);
 
       //------------------------------------------------------------------------------ MY SETUP BELOW
-      snake = new Snake(100, 10, 3, 20);
+      if ((typeof window.orientation !== 'undefined')) {
+        snake = new Snake(20, 10, 3, 20);
+      } else {
+        snake = new Snake(100, 10, 3, 20);
+      }
     }
-
 
     /**
      * on window resize we resize canvas
@@ -54,7 +57,6 @@ function snakeSketch(snakeElementId_) {
     p5.windowResized = () => {
       p5.resizeCanvas($('#' + snakeElementId)[0].clientWidth, $('#' + snakeElementId)[0].clientHeight);
     }
-
 
     /**
      * basic animation loop of p5

@@ -1,10 +1,10 @@
+import TouchBall from './touchBall'
 
 /**
  * Creates a new segment of a snake
  * @class
  */
 class Segment {
-
 
   /**
    * constructor - description
@@ -32,9 +32,13 @@ class Segment {
     //we calculate end point
     this.calculateB();
 
+    //in touch mode we need to create special ball that will react on tilt instead of mouse
+    if (params.next==='touch') {
+        this.ball=new TouchBall(params.x,params.y,p5);
+    }
+
     this.next = params.next;
   }
-
 
   /**
    * calculateB - B point calculator. It takes position of a point and then calculates b based on parameters that were calculated during repositioning of a
@@ -47,7 +51,6 @@ class Segment {
     this.b.set(this.a.x + dx, this.a.y + dy);
   }
 
-
   /**
    * follow - recalculate position of a point based on next element of snake segments
    *
@@ -58,11 +61,19 @@ class Segment {
     let target;
 
     //which point to follow
-    if (this.next === 'mouse') {
-      target = p5.createVector(p5.mouseX, p5.mouseY);
-    } else {
-      target = p5.createVector(this.next.a.x, this.next.a.y);
+    switch (this.next) {
+      case 'mouse':
+        target = p5.createVector(p5.mouseX, p5.mouseY);
+        break;
+      case 'touch':
+        this.ball.update();
+        target = p5.createVector(this.ball.x, this.ball.y);
+        break;
+      default:
+        target = p5.createVector(this.next.a.x, this.next.a.y);
+        break;
     }
+
     let dir = p5.createVector(target.x - this.a.x, target.y - this.a.y); //p5.Vector.sub(target, this.a);
     this.angle = dir.heading();
     dir.setMag(this.len);
@@ -72,7 +83,6 @@ class Segment {
 
   }
 
-
   /**
    * update - we update a and b points
    *
@@ -81,7 +91,6 @@ class Segment {
     this.follow();
     this.calculateB();
   }
-
 
   /**
    * draw - draw functino of segment
