@@ -1,5 +1,13 @@
 import jQuery from 'jquery';
 
+
+
+/**
+ * isElementInViewport - functino that shows if the element is in viewport
+ *
+ * @param  {DOM element} el element that is being checked if it's visible
+ * @return {boolean}    visibility of el
+ */
 export default function isElementInViewport(el) {
 
   //special bonus for those using jQuery
