@@ -1,3 +1,11 @@
 .extraHigh {
   height:10000px;
 }
+
+.top {
+  z-index:1;
+}
+
+#Snake {
+  height:100vh;
+}

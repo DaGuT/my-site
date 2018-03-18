@@ -1,5 +1,21 @@
+
+/**
+ * Creates a new segment of a snake
+ * @class
+ */
 export default class Segment {
 
+
+  /**
+   * constructor - description
+   * @constructor
+   * @param  {object} params parameter of Segment
+   * @param  {float} params.x X position of A point
+   * @param  {float} params.y Y position of A point
+   * @param  {float} params.len segment length
+   * @param  {float} params.sw segment thickness
+   * @param  {(string|object)} params.next Specifies object that should be followed. It can be string="mouse" or one of other segments
+   */
   constructor(params) {
     var p5 = window.p5;
     //start and end points
@@ -19,13 +35,23 @@ export default class Segment {
     this.next = params.next;
   }
 
-  //B point calculator
+
+  /**
+   * calculateB - B point calculator. It takes position of a point and then calculates b based on parameters that were calculated during repositioning of a
+   *
+   */
+
   calculateB() {
     let dx = this.len * Math.cos(this.angle);
     let dy = this.len * Math.sin(this.angle);
     this.b.set(this.a.x + dx, this.a.y + dy);
   }
 
+
+  /**
+   * follow - recalculate position of a point based on next element of snake segments
+   *
+   */
   follow() {
     var p5 = window.p5;
 
@@ -46,11 +72,21 @@ export default class Segment {
 
   }
 
+
+  /**
+   * update - we update a and b points
+   *
+   */
   update() {
     this.follow();
     this.calculateB();
   }
 
+
+  /**
+   * draw - draw functino of segment  
+   *
+   */
   draw() {
     var p5 = window.p5;
 

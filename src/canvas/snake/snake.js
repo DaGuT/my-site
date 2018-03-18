@@ -1,6 +1,21 @@
 import Segment from './segment'
 
+
+/**
+ * this is snake itself that connects segments and make them redraw propely
+ * @class
+ */
 export default class Snake {
+
+
+  /**
+   * constructor - description
+   *
+   * @param  {int} segCount     amount of segments that Snake should consist of
+   * @param  {float} segLen       segment length
+   * @param  {float} minThickness the most thinnest part of snake will have this thickness
+   * @param  {float} maxThickness the most fattest part of snake will have this thickness.
+   */
   constructor(segCount,segLen,minThickness, maxThickness) {
     var p5=window.p5;
 
@@ -32,6 +47,11 @@ export default class Snake {
     }
   }
 
+
+  /**
+   * draw - first it updates  segment position  from head to tail and then draws it. And does it with each element
+   *
+   */
   draw() {
     this.segments.forEach((segment)=>{
       segment.update();
