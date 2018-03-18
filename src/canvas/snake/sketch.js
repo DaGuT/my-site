@@ -57,10 +57,11 @@ function snakeSketch(snakeElementId_) {
 
 
     /**
-     * basic animation loop of p5    
+     * basic animation loop of p5
      */
     p5.draw = () => {
-      p5.background(100);
+      p5.clear();
+      //p5.background('rgba(0,0,0,0)');
       snake.draw();
     }
 

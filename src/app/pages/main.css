@@ -1,11 +1,83 @@
 .extraHigh {
-  height:10000px;
+  height: 10000px;
 }
 
 .top {
-  z-index:1;
+  z-index: 999;
 }
 
 #Snake {
-  height:100vh;
+  height: 100vh;
+  color: black;
+  background: linear-gradient(rgb(255, 0, 193), rgb(73, 0, 255), rgb(0, 184, 255));
+  position: relative;
+  /* fix for canvas background */
+}
+
+.slideout-menu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 256px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+@media screen and (min-width: 768px) {
+  .slideout-panel {
+    margin-left: 0px;
+  }
+
+  .slideout-menu {
+    display:block;
+    margin-left:-1000px;
+  }
+}
+
+
+/* Custom */
+
+#main {
+  background: white;
+  height: 100vmin !important;
+}
+
+#navbar-main {
+  background: #eee;
+}
+
+#navbar-main h4 {
+  margin-top: 30px;
+  padding: 0 15px;
+}
+
+#navbar-main ul li a {
+  border-radius: 0;
 }

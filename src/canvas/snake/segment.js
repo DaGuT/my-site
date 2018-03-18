@@ -3,7 +3,7 @@
  * Creates a new segment of a snake
  * @class
  */
-export default class Segment {
+class Segment {
 
 
   /**
@@ -84,7 +84,7 @@ export default class Segment {
 
 
   /**
-   * draw - draw functino of segment  
+   * draw - draw functino of segment
    *
    */
   draw() {
@@ -98,3 +98,5 @@ export default class Segment {
   }
 
 }
+
+export default Segment;

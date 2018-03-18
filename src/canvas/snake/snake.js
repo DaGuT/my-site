@@ -5,7 +5,7 @@ import Segment from './segment'
  * this is snake itself that connects segments and make them redraw propely
  * @class
  */
-export default class Snake {
+class Snake {
 
 
   /**
@@ -59,3 +59,5 @@ export default class Snake {
     });
   }
 }
+
+export default Snake;
