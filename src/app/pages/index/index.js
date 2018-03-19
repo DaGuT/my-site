@@ -25,11 +25,9 @@ class IndexPage extends Component {
   //after we rendered our page, we add JS stuff
   componentDidMount() {
 
-    if (this.req['./2.snakeBlock.js']) {
-      //we spawn our snake in #Snake taking its full size
-      let snakeId = 'Snake';
-      new p5(snakeSketch(snakeId), snakeId);
-    }
+    //we spawn our snake in #Snake taking its full size
+    let snakeId = 'Snake';
+    new p5(snakeSketch(snakeId), snakeId);
     //sideout place
     $('#root').before('<sidebar id="side-menu" class="bg-light"><nav class="sidebar" id="sidebar-nav"><img src=' + spongeGif + ' class="img-thumbnail"></nav></sidebar>');
     //initial sideout
