@@ -39,6 +39,7 @@ class IndexPage extends Component {
     return (<div>
       {navbar()}
       {snakeBlock()}
+      {aboutMe()}
       <p className="extraHigh"></p>
     </div>);
 
@@ -58,6 +59,13 @@ class IndexPage extends Component {
       </div>);
     }
 
+
+
+    /**
+     * navbar - this is navbar + sidebar for mobile devices
+     *
+     * @return {DOM block}  whole navigation block
+     */
     function navbar() {
       return (<nav id="nav-panel" className="navbar navbar-expand-md navbar-light bg-light">
         <a className="navbar-brand" href="#">DaGuT.Ru</a>
@@ -79,6 +87,20 @@ class IndexPage extends Component {
           </ul>
         </div>
       </nav>);
+    }
+
+
+    /**
+     * aboutMe - this is the block that is describing me :D
+     *
+     * @return {DOM block}  whole block about me
+     */
+    function aboutMe(){
+      return(
+        <div id="about-me" className="container bg-light p-3">
+          Hola, test man!
+        </div>
+      );
     }
 
   }

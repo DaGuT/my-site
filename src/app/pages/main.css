@@ -54,9 +54,14 @@
     margin-left: 0px;
   }
 
-  .slideout-menu {
+  .slideout-menu-left {
     display:block;
-    margin-left:-1000px;
+    left:-500px;
+  }
+
+  .slideout-menu-right {
+    display:block;
+    right:-500px;
   }
 }
 
