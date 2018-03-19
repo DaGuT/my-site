@@ -1,0 +1,22 @@
+If you want, you can just easily spawn snake canvas anywhere.
+
+All you need to do is include sketch.js (and copy all the files from snake folder) in you file where you'll spawn it, and then add
+this code below and replace YourID with your element ID where snake will spawn. That's it. Easy as that.
+
+
+--------------------------
+
+//js
+let snakeId = 'YourID';
+new p5(snakeSketch(snakeId), snakeId);
+
+//Plus  this code to css
+#YourID {
+  position: relative;
+  /* fix for canvas background */
+}
+
+--------------------------
+
+
+If you want to stop canvas (noLoop()) when it's out of viewpoint, then add onVisibilityChange.js from misc.

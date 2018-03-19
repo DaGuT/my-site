@@ -31,19 +31,22 @@ function snakeSketch(snakeElementId_) {
       p5.createCanvas($('#' + snakeElementId)[0].clientWidth, $('#' + snakeElementId)[0].clientHeight);
 
       //this is handler that should prevent canvas from updating and taking computing power when it's not in viewpoin
-      var handler = onVisibilityChange($('#' + snakeElementId), function(visibility) {
-        if (visibility) {
-          p5.loop();
-        } else {
-          p5.noLoop();
-        }
-      });
+      if (onVisibilityChange) { //we only do this if we have this function included
+        var handler = onVisibilityChange($('#' + snakeElementId), function(visibility) {
+          if (visibility) {
+            p5.loop();
+          } else {
+            p5.noLoop();
+          }
+        });
 
-      //this is will check if visibility is changed upon few events
-      //I'm not using intersection API as I want to support some older browsers
-      $(window).on('DOMContentLoaded load resize scroll', handler);
+        //this is will check if visibility is changed upon few events
+        //I'm not using intersection API as I want to support some older browsers
+        $(window).on('DOMContentLoaded load resize scroll', handler);
+      }
 
       //------------------------------------------------------------------------------ MY SETUP BELOW
+      // mobile phones are not that powerful, so we make different snake size
       if ((typeof window.orientation !== 'undefined')) {
         snake = new Snake(20, 10, 3, 20);
       } else {
