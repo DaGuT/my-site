@@ -22,7 +22,7 @@ class IndexPage extends Component {
     //sideout place
     $('#root').before('<aside id="side-menu" class="bg-light"><nav class="sidebar" id="sidebar-nav"><img src='+spongeGif+' class="img-thumbnail"></nav></aside>');
     //initial sideout
-    var slideout = new Slideout({'panel': document.getElementById('root'), 'menu': document.getElementById('side-menu'), 'padding': 256, 'tolerance': 70, 'side': 'left'});
+    var slideout = new Slideout({'panel': document.getElementById('root'), 'menu': document.getElementById('side-menu'), 'padding': 256, 'tolerance': 70, 'side': 'right'});
     //copy top-menu items to side panel
     $('#my-menu').children().children().clone().appendTo("#sidebar-nav");
     $('#side-menu').children().wrapAll("<div class='sidebar-sticky'></div>").wrapAll("<ul class='nav flex-column'></ul>");
@@ -39,6 +39,7 @@ class IndexPage extends Component {
     return (<div>
       {navbar()}
       {snakeBlock()}
+      <p className="extraHigh"></p>
     </div>);
 
     //--------------- BLOCKS DECLARATION----------------------

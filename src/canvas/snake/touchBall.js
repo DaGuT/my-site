@@ -10,8 +10,8 @@ class TouchBall {
   update() {
       let p5=this.p5;
 
-      this.x+=p5.rotationX/45;
-      this.y+=p5.rotationY/45;
+      this.x+=p5.rotationY/10;
+      this.y+=p5.rotationX/10;
 
       if (this.x>=p5.width) this.x=p5.width;
       if (this.x<=0) this.x=0;
