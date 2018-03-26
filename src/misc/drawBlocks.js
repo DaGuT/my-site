@@ -8,8 +8,8 @@
  */
 function drawBlocks(that) {
   var dom=[];
-  that.req.keys().forEach((key) => {
-    dom.push(that.req(key).default());
+  window.indexBlocks.forEach((elem) => {
+    dom.push(elem.default());
   });
   return dom;
 }

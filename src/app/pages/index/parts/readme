@@ -1,0 +1,6 @@
+if you want to add new block to the page, feel free to just create another js files
+
+Structure should be as following:
+
+default function;
+later function; (will be executed after dom is mounted. It's made that way so that you will be able to manipulate module DOM without having to write it anywhere else)
