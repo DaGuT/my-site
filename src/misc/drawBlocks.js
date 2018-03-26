@@ -6,7 +6,7 @@
  * @param  {React.Component} that React Component that has 'req' object that consists of functions that draws DOM block (so that you can make as much functions that returns blocks in folder and they will all be drawn)
  * @return {array of DOM blocks}
  */
-function drawBlocks(that) {
+function drawBlocks() {
   var dom=[];
   window.indexBlocks.forEach((elem) => {
     dom.push(elem.default());

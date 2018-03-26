@@ -3,13 +3,19 @@ import $ from 'jquery';
 import Slideout from "slideout";
 import * as spongeGif from '../../../../img/sb.gif';
 
+let params = {
+  'displayName': 'Navigation bar',
+  'blockID': 'navbar'
+};
+
+
 /**
  * navbar - this is navbar + sidebar for mobile devices
  *
  * @return {DOM block}  whole navigation block
  */
 function navbar() {
-  return (<nav id="nav-panel" key="navbar" className="navbar navbar-expand-md navbar-light bg-light">
+  return (<nav id={params.blockID} key={params.blockID} className="navbar navbar-expand-md navbar-light bg-light">
     <a className="navbar-brand" href="#">DaGuT.Ru</a>
     <button className="navbar-toggler" type="button">
       <span className="navbar-toggler-icon"></span>
@@ -27,19 +33,17 @@ function navbar() {
           <a className="nav-link" href="#">Link 2</a>
         </li>
       </ul>
+      <ul className="navbar-nav mr-auto" id="blockLinks">
+      </ul>
     </div>
   </nav>);
 }
-
-export default navbar;
-
-
 
 /**
  * later - executed after DOM is loaded
  *
  */
-export function later() {
+function later() {
   //sideout place
   $('#root').before('<sidebar id="side-menu" class="bg-light"><nav class="sidebar" id="sidebar-nav"><img src=' + spongeGif + ' class="img-thumbnail"></nav></sidebar>');
   //initial sideout
@@ -52,3 +56,7 @@ export function later() {
     slideout.toggle();
   });
 }
+
+export {params}
+export default navbar;
+export {later};

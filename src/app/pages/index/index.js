@@ -34,7 +34,7 @@ class IndexPage extends Component {
     //if there are function that require to be executed after DOM is loaded, here we execute them
     window.indexBlocks.forEach((elem) => {
       if (elem.later)
-        if (elem.default.name === "aboutMe") {
+        if (elem.params.blockID === "aboutMe") {
           elem.later(this.resort)
         } else
           elem.later();

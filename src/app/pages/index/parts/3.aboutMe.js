@@ -4,13 +4,18 @@ import '../../main.css';
 import Sortable from 'sortablejs';
 import $ from 'jquery';
 
+let params = {
+  'displayName': 'About me',
+  'blockID': 'aboutMe'
+};
+
 /**
  * aboutMe - this is the block that is describing me :D
  *
  * @return {DOM block}  whole block about me
  */
 function aboutMe(resort) {
-  return (<div id="about-me" key="aboutMe" className="container-fluid bg-light text-center p-md-5 pb-sm-5 pt-sm-5">
+  return (<div id={params.blockID} key={params.blockID} className="container-fluid bg-light text-center p-md-5 pb-sm-5 pt-sm-5">
     <h1 className="col-md-6 offset-md-3 mb-5">Hola, test man!</h1>
     <div className="row">
 
@@ -43,14 +48,12 @@ function aboutMe(resort) {
   </div>);
 }
 
-export default aboutMe;
-
-export function later(resort) {
+function later(resort) {
   var el = document.getElementById('sortableList');
 
   var sortable = Sortable.create(el, {
     animation: 150,
-    onEnd: function(evt) {//typical blocks resort
+    onEnd: function(evt) { //typical blocks resort
       let blocks = window.indexBlocks;
       let temp = blocks[evt.oldIndex]; //we memorize deleted element to later put it back
       blocks.splice(evt.oldIndex, 1); //we remove it from array
@@ -64,7 +67,10 @@ export function later(resort) {
     }
   });
 
-  $('#resortButton').click(resort);
+  $('#resortButton').click(() => {
+    resort();
+    console.log('resorted');
+  });
 }
 
 //---------Misc functions-----
@@ -79,7 +85,7 @@ function makeList(keyList) {
   let list = [];
 
   window.indexBlocks.forEach((elem) => {
-    let temp = elem.default.name;
+    let temp = elem.params.displayName;
     list.push(<div className='col btn btn-info m-1' key={temp}>{temp}</div>);
   });
   return list;
@@ -90,3 +96,13 @@ function printList() {
     {makeList(window.indexBlocks)}
   </div>);
 }
+
+export {
+  params
+};
+
+export default aboutMe;
+
+export {
+  later
+};
