@@ -11,12 +11,12 @@ You can check working demo at [DaGuT.Ru (clickable)](https://dagut.ru/demos/mysi
 
 ## Currently wanted things:
 - [x] Better readme
-- [] Portfolio block with json database
-- [] Admin panel for adding portfolio item
-- [] Admin panel functionality for managing those items (not soon)
-- [] Nice footer
-- [] Redux support? Idk
-- [] Multiplayer drawing block with websockets (ergh, gonna need some node server for that :\)
+- [ ] Portfolio block with json database
+- [ ] Admin panel for adding portfolio item
+- [ ] Admin panel functionality for managing those items (not soon)
+- [ ] Nice footer
+- [ ] Redux support? Idk
+- [ ] Multiplayer drawing block with websockets (ergh, gonna need some node server for that :\)
 
 
 UPD 11.04.2018 I'll update site soon. Just busy with my diploma now
