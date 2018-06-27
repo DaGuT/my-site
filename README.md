@@ -10,14 +10,14 @@ You can check working demo at [DaGuT.Ru (clickable)](https://dagut.ru/demos/mysi
 * Resortable index page, meaning you can simply drag and drop blocks and they'll be drawn in new order (you can add "save" feature to remember the order). I did that for fun just to see if I can do it
 
 ## Currently wanted things:
-- [x] Better readme
 - [ ] Portfolio block with json database
 - [ ] Admin panel for adding portfolio item
 - [ ] Admin panel functionality for managing those items (not soon)
 - [ ] Nice footer
 - [ ] Redux support? Idk
 - [ ] Multiplayer drawing block with websockets (ergh, gonna need some node server for that :\)
-
+- [ ] Better JSdocing
+- [x] Better readme
 
 UPD 11.04.2018 I'll update site soon. Just busy with my diploma now
 
