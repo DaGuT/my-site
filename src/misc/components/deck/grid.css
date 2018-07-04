@@ -1,6 +1,6 @@
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(1fr, 6);
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
