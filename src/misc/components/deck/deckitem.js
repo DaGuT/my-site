@@ -12,7 +12,7 @@ class Deckitem extends Component {
 
   render() {
     return (
-      <div className={this.props.className} style={this.props.style}>{this.props.children}</div>
+      <div key={this.props.key} className={this.props.className} style={this.props.style}>{this.props.children}</div>
     );
   };
 }

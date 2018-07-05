@@ -1,15 +1,19 @@
 [{
     "sitename": "DaGuT.Ru",
-    "imgSrc": "./assets/img/dagutru.png",
+    "imgSrc": "./portfolio/assets/img/dagutru.png",
     "src": "https://dagut.ru",
     "time": 1529048413,
-    "labels": ["landing", "justme", "react", "git"]
+    "labels": ["landing", "justme", "react", "git"],
+    "rows":3,
+    "cols":3
   },
   {
     "sitename": "GeoCalc",
-    "imgSrc": "./assets/img/geocalc.png",
+    "imgSrc": "./portfolio/assets/img/geocalc.png",
     "src": "http://geocalc.am.tpu.ru",
     "time": 1529048413,
-    "labels": ["react"]
+    "labels": ["react"],
+    "rows":3,
+    "cols":3
   }
 ]

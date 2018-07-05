@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Deckitem from '../../../../misc/components/deck/deckitem.js';
+import Deck from '../../../../misc/components/deck/deck.js';
 import '../../main.css';
 import $ from 'jquery';
 
@@ -18,44 +18,16 @@ function Portfolio() {
     <div className="heading top align-self-center">
       <h1 className="pb-5">Portfolio</h1>
     </div>
-    <div className="grid-container">
-      <Deckitem className="grc-md-1 grr-md-2" style={{
-          background: '#00FF00'
-        }}>
-        1
-      </Deckitem>
-    </div>
+    <Deck data={"./portfolio/portfolio.json"}/>
 
   </div>);
-}
-
-/**
- * parseJSON - this function just dls json file with portfolio
- *
- * @param  {type} link url to json
- * @return {type}      nothing. It will execute function parsed() after json is loaded
- */
-function parseJSON(link) {
-  $.get(link, processParsed).fail((jqxhr, textStatus, error) => {
-    var err = textStatus + ", " + error;
-    console.log("Request Failed: " + err);
-  });
-  console.log(link);
-  console.log('json is being loaded');
-}
-
-function processParsed(data) {
-  console.log('json loaded');
-  console.log(data);
 }
 
 /**
  * export later - executed after dom is loaded
  *
  */
-function later() {
-  parseJSON("./portfolio/portfolio.json");
-}
+function later() {}
 
 export {
   params
