@@ -1,5 +1,4 @@
 .grid-container .pf-item {
-  background-size:cover;
-  width:100px;
-  height:100px;
+  background-size:auto;
+  
 }

@@ -14,7 +14,7 @@ let params = {
  * @return {DOM block}  whole portfolio page
  */
 function Portfolio() {
-  return (<div id={params.blockID} key={params.blockID} className="container-fluid text-center p-md-5 pb-sm-5 pt-sm-5">
+  return (<div id={params.blockID} key={params.blockID} className="container-fluid text-center p-0 pb-sm-5 pt-sm-5">
     <div className="heading top align-self-center">
       <h1 className="pb-5">Portfolio</h1>
     </div>

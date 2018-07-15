@@ -4,7 +4,7 @@
     "src": "https://dagut.ru",
     "time": 1529048413,
     "labels": ["landing", "justme", "react", "git"],
-    "rows":3,
+    "rows":1,
     "cols":3
   },
   {
@@ -15,5 +15,50 @@
     "labels": ["react"],
     "rows":3,
     "cols":3
+  },
+  {
+    "sitename": "GeoCalc",
+    "imgSrc": "./portfolio/assets/img/geocalc.png",
+    "src": "http://geocalc.am.tpu.ru",
+    "time": 1529048413,
+    "labels": ["react"],
+    "rows":1,
+    "cols":3
+  },
+  {
+    "sitename": "GeoCalc",
+    "imgSrc": "./portfolio/assets/img/geocalc.png",
+    "src": "http://geocalc.am.tpu.ru",
+    "time": 1529048413,
+    "labels": ["react"],
+    "rows":2,
+    "cols":1
+  },
+  {
+    "sitename": "GeoCalc",
+    "imgSrc": "./portfolio/assets/img/geocalc.png",
+    "src": "http://geocalc.am.tpu.ru",
+    "time": 1529048413,
+    "labels": ["react"],
+    "rows":2,
+    "cols":2
+  },
+  {
+    "sitename": "GeoCalc",
+    "imgSrc": "./portfolio/assets/img/geocalc.png",
+    "src": "http://geocalc.am.tpu.ru",
+    "time": 1529048413,
+    "labels": ["react"],
+    "rows":1,
+    "cols":1
+  },
+  {
+    "sitename": "GeoCalc",
+    "imgSrc": "./portfolio/assets/img/geocalc.png",
+    "src": "http://geocalc.am.tpu.ru",
+    "time": 1529048413,
+    "labels": ["react"],
+    "rows":6,
+    "cols":6
   }
 ]
