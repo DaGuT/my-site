@@ -23,7 +23,11 @@ class Deck extends Component {
     function drawDeck(data) {
       let list = [];
       data.forEach((item) => {
-        list.push(<Deckitem className={"grr-md-" + (item.rows || 1) + " grc-md-" + (item.cols || 1)+" pf-item"} key={item.imgSrc} style={{'background-image':"url("+item.imgSrc+")"}}>asd</Deckitem>);
+        list.push(<Deckitem className={"grr-md-" + (
+          item.rows || 1) + " grc-md-" + (
+          item.cols || 1) + " pf-item"} key={item.imgSrc} style={{
+            'background-image' : "url(" + item.imgSrc + ")"
+          }} sitename={item.sitename} sitedesc={item.sitedesc}/>);
       });
       return list;
     }

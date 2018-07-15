@@ -1,4 +1,45 @@
 .grid-container .pf-item {
-  background-size:auto;
-  
+  background-size: cover;
+  position:relative;
+}
+
+.with-overlay .center-text {
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.with-overlay .center-text .subtext {
+  font-size:1.5rem;
+}
+
+.with-overlay .center-text .subtext:not(:empty)::before {
+  content:"";
+  background-color: #FFF;
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  display: block;
+}
+
+.with-overlay .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+.with-overlay .overlay:hover {
+  opacity: 0.9;
 }

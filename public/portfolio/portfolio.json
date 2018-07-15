@@ -1,10 +1,11 @@
 [{
     "sitename": "DaGuT.Ru",
+    "sitedesc": "Some text should be here about how cool this site is",
     "imgSrc": "./portfolio/assets/img/dagutru.png",
     "src": "https://dagut.ru",
     "time": 1529048413,
     "labels": ["landing", "justme", "react", "git"],
-    "rows":1,
+    "rows":3,
     "cols":3
   },
   {
