@@ -1,53 +1,48 @@
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-auto-rows: 16.6vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; /* line is splitted into 6 different parts. so grc-*-6 will take the whole line */
+  grid-auto-rows: 16.6vh; /* grr-*-6 will take full height */
 }
 
-/* // Small devices (landscape phones, 576px and up) */
-
-@media (min-width: 576px) {
-
   /* column spans to take more than 1 column */
-  .grc-sm-1 {
+  .grc-1 {
     grid-column: 1;
   }
-  .grc-sm-2 {
+  .grc-2 {
     grid-column: span 2;
   }
-  .grc-sm-3 {
+  .grc-3 {
     grid-column: span 3;
   }
-  .grc-sm-4 {
+  .grc-4 {
     grid-column: span 4;
   }
-  .grc-sm-5 {
+  .grc-5 {
     grid-column: span 5;
   }
-  .grc-sm-6 {
+  .grc-6 {
     grid-column: span 6;
   }
   /* same for rows */
-  .grr-sm-1 {
+  .grr-1 {
     grid-row: 1;
   }
-  .grr-sm-2 {
+  .grr-2 {
     grid-row: span 2;
   }
-  .grr-sm-3 {
+  .grr-3 {
     grid-row: span 3;
   }
-  .grr-sm-4 {
+  .grr-4 {
     grid-row: span 4;
   }
-  .grr-sm-5 {
+  .grr-5 {
     grid-row: span 5;
   }
-  .grr-sm-6 {
+  .grr-6 {
     grid-row: span 6;
   }
 
-}
 
 /* Medium devices (tablets, 768px and up) */
 
