@@ -14,7 +14,7 @@
     "src": "http://geocalc.am.tpu.ru",
     "time": 1529048413,
     "labels": ["react"],
-    "rows":3,
+    "rows":2,
     "cols":3
   },
   {
@@ -24,7 +24,7 @@
     "time": 1529048413,
     "labels": ["react"],
     "rows":1,
-    "cols":3
+    "cols":2
   },
   {
     "sitename": "GeoCalc",
@@ -42,7 +42,7 @@
     "time": 1529048413,
     "labels": ["react"],
     "rows":2,
-    "cols":2
+    "cols":5
   },
   {
     "sitename": "GeoCalc",
