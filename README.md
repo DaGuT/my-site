@@ -22,3 +22,5 @@ You can check working demo at [DaGuT.Ru (clickable)](https://dagut.ru/demos/mysi
 UPD 11.04.2018 I'll update site soon. Just busy with my diploma now
 
 UPD 16.04.2018 I'm working slowly because I have so many other things to do...
+
+UPD 15.07.2018 I'm almost back. Though I'll try to write more code now to finish the most of the site by the end of this summer.
