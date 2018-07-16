@@ -43,3 +43,12 @@
 .with-overlay .overlay:hover {
   opacity: 0.9;
 }
+
+.mfp-iframe-holder .mfp-content {
+  height:90%;
+  min-height:800px;
+  min-width:100%;
+}
+.mfp-iframe-scaler iframe {
+  background:white !important;
+}

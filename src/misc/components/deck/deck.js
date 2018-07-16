@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Deckitem from './deckitem.js';
 import './grid.css';
 import $ from 'jquery';
+import "magnific-popup";
+import "magnific-popup/dist/magnific-popup.css";
 
 class Deck extends Component {
 
@@ -18,16 +20,42 @@ class Deck extends Component {
     this.parseJSON(this.props.data);
   }
 
+  //upon component update we update all portfolio items
+  componentDidUpdate() {
+    $('.mf-popup').magnificPopup({
+      type: 'iframe',
+      iframe: {
+        patterns: {
+          pf: {
+            index: '',
+            id: function(url) {
+              return url;
+            },
+            src: '%id%'
+          }
+        }
+      },
+      gallery: {
+        enabled: true, // set to true to enable gallery
+
+        navigateByImgClick: true,
+
+        arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
+
+        tPrev: 'Previous (Left arrow key)', // title for left button
+        tNext: 'Next (Right arrow key)', // title for right button
+        tCounter: '<span class="mfp-counter">%curr% of %total%</span>' // markup of counter
+      }
+
+    });
+  }
+
   render() {
     //may be I should hide functions like this?
     function drawDeck(data) {
       let list = [];
       data.forEach((item) => {
-        list.push(<Deckitem className={"grr-md-" + (
-          item.rows || 1) + " grc-md-" + (
-          item.cols || 1) + " pf-item"} key={item.imgSrc} style={{
-            'background-image' : "url(" + item.imgSrc + ")"
-          }} sitename={item.sitename} sitedesc={item.sitedesc}/>);
+        list.push(<Deckitem item={item}/>);
       });
       return list;
     }

@@ -7,14 +7,17 @@ class Deckitem extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
-    return (<div key={this.props.key} className={this.props.className + " with-overlay"} style={this.props.style}>
+    return (<a  href={this.props.item.src} key={this.props.item.key} className={"grr-md-" + (
+      this.props.item.rows || 1) + " grc-md-" + (
+      this.props.item.cols || 1) + " pf-item" + " with-overlay mf-popup"} style={{
+        'backgroundImage' : "url(" + this.props.item.imgSrc + ")"
+      }}>
       <div className="overlay">
-        <div className="center-text">{this.props.sitename}<div className="subtext">{this.props.sitedesc || ""}</div>
+        <div className="center-text">{this.props.item.sitename}<div className="subtext">{this.props.item.sitedesc || ""}</div>
         </div>
       </div>
-    </div>);
+    </a>);
   };
 }
 
