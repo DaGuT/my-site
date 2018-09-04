@@ -1,4 +1,4 @@
-# This is my entire source code for my DaGuT.Ru site. 
+# This is my entire source code for my DaGuT.Ru site.
 I dont have any special plans to use it(may be I do, but only as my Personal page), It's just made for learning purposes
 
 
@@ -10,13 +10,13 @@ You can check working demo at [DaGuT.Ru (clickable)](https://dagut.ru/demos/mysi
 * Resortable index page, meaning you can simply drag and drop blocks and they'll be drawn in new order (you can add "save" feature to remember the order). I did that for fun just to see if I can do it
 
 ## Currently wanted things:
-- [ ] Portfolio block with json database
 - [ ] Admin panel for adding portfolio item
 - [ ] Admin panel functionality for managing those items (not soon)
 - [ ] Nice footer
 - [ ] Redux support? Idk
 - [ ] Multiplayer drawing block with websockets (ergh, gonna need some node server for that :\)
 - [ ] Better JSdocing
+- [x] Portfolio block with json database
 - [x] Better readme
 
 UPD 11.04.2018 I'll update site soon. Just busy with my diploma now
