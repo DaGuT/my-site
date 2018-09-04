@@ -3,6 +3,10 @@
   position:relative;
 }
 
+.with-overlay {
+  background-position:center;
+}
+
 .with-overlay .center-text {
   color: white;
   font-size: 2rem;
@@ -51,4 +55,10 @@
 }
 .mfp-iframe-scaler iframe {
   background:white !important;
+}
+
+.changed-pointer a {
+  text-decoration:underline;
+  color:white;
+  cursor:cell;
 }

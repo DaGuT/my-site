@@ -1,12 +1,39 @@
 [{
+    "sitename": "JoyJoyScuba",
+    "imgSrc": "./portfolio/assets/img/jjs.png",
+    "src": "//joyjoyscuba.com",
+    "time": 1529048413,
+    "labels": ["wordpress", "unique design", "premium template"],
+    "rows": 4,
+    "cols": 5
+  },
+  {
     "sitename": "DaGuT.Ru",
     "sitedesc": "Some text should be here about how cool this site is",
     "imgSrc": "./portfolio/assets/img/dagutru.png",
     "src": "//dagut.ru",
     "time": 1529048413,
     "labels": ["landing", "justme", "react", "git"],
-    "rows":3,
-    "cols":3
+    "rows": 2,
+    "cols": 1
+  },
+  {
+    "sitename": "3 in a row game skeleton on PIXI",
+    "imgSrc": "./portfolio/assets/img/3inrow.PNG",
+    "src": "//dagut.ru/demos/3InARow",
+    "time": 1529048413,
+    "labels": ["js", "PIXI", "game"],
+    "rows": 2,
+    "cols": 1
+  },
+  {
+    "sitename": "Particle text",
+    "imgSrc": "./portfolio/assets/img/particles.PNG",
+    "src": "//dagut.ru/demos/ParticlesText",
+    "time": 1529048413,
+    "labels": ["js", "fun"],
+    "rows": 1,
+    "cols": 6
   },
   {
     "sitename": "GeoCalc",
@@ -14,63 +41,36 @@
     "src": "http://geocalc.am.tpu.ru",
     "time": 1529048413,
     "labels": ["react"],
-    "rows":3,
-    "cols":3
-  },
-  {
-    "sitename": "JoyJoyScuba",
-    "imgSrc": "./portfolio/assets/img/jjs.png",
-    "src": "//joyjoyscuba.com",
-    "time": 1529048413,
-    "labels": ["wordpress","unique design", "premium template"],
-    "rows":3,
-    "cols":3
-  },
-  {
-    "sitename": "Particle text",
-    "imgSrc": "./portfolio/assets/img/particles.PNG",
-    "src": "/demos/ParticlesText",
-    "time": 1529048413,
-    "labels": ["js","fun"],
-    "rows":3,
-    "cols":3
-  },
-  {
-    "sitename": "3 in a row game skeleton on PIXI",
-    "imgSrc": "./portfolio/assets/img/3inrow.PNG",
-    "src": "/demos/3InARow",
-    "time": 1529048413,
-    "labels": ["js","PIXI","game"],
-    "rows":3,
-    "cols":3
+    "rows": 3,
+    "cols": 3
   },
   {
     "sitename": "Weather App built with React :)",
-    "sitedesc":"<a href='./demos/weather'>Weather App built with React :)</a> Latest version is on <a href='https://github.com/DaGuT/react-weather-app'>GIT</a>",
+    "sitedesc": "<a href='./demos/weather'>Weather App built with React :)</a> Latest version is on <a href='https://github.com/DaGuT/react-weather-app'>GIT</a>",
     "imgSrc": "./portfolio/assets/img/weather.PNG",
-    "src": "/demos/weather",
+    "src": "//dagut.ru/demos/weather",
     "time": 1529048413,
-    "labels": ["js","react","app"],
-    "rows":3,
-    "cols":3
+    "labels": ["js", "react", "app"],
+    "rows": 3,
+    "cols": 3
   },
   {
     "sitename": "Crypto-Converter",
     "imgSrc": "./portfolio/assets/img/crypto.PNG",
     "src": "https://crypto-converter.ru/",
     "time": 1529048413,
-    "labels": ["wordpress","backend","template","app","script"],
-    "rows":3,
-    "cols":3
+    "labels": ["wordpress", "backend", "template", "app", "script"],
+    "rows": 3,
+    "cols": 3
   },
   {
     "sitename": "Test task in Elecard. Эдакая галлерейка (Change protocol to HTTP to work) :) ",
-    "sitedesc":"<a href='./demos/Elecard'>Test task in Elecard. Эдакая галлерейка (Change protocol to HTTP to work) :)</a> Latest version is on <a href='https://github.com/DaGuT/elecard-test'>GIT</a>",
+    "sitedesc": "<a href='./demos/Elecard'>Test task in Elecard. Эдакая галлерейка (Change protocol to HTTP to work) :)</a> Latest version is on <a href='https://github.com/DaGuT/elecard-test'>GIT</a>",
     "imgSrc": "./portfolio/assets/img/elecard.PNG",
-    "src": "/demos/Elecard",
+    "src": "//dagut.ru/demos/Elecard",
     "time": 1529048413,
-    "labels": ["js","app","made with brackets",""],
-    "rows":3,
-    "cols":3
+    "labels": ["js", "app", "made with brackets", ""],
+    "rows": 3,
+    "cols": 3
   }
 ]

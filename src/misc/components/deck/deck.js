@@ -74,7 +74,6 @@ class Deck extends Component {
     $.get(link).done((data) => {
       console.log('json loaded');
       this.setState({'data': data});
-      console.log(this.state.data);
     }).fail((jqxhr, textStatus, error) => {
       var err = textStatus + ", " + error;
       console.log("Request Failed: " + err);

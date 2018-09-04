@@ -6,7 +6,7 @@
 
   /* column spans to take more than 1 column */
   .grc-1 {
-    grid-column: 1;
+    grid-column: span 1;
   }
   .grc-2 {
     grid-column: span 2;
@@ -25,7 +25,7 @@
   }
   /* same for rows */
   .grr-1 {
-    grid-row: 1;
+    grid-row: span 1;
   }
   .grr-2 {
     grid-row: span 2;
@@ -49,7 +49,7 @@
 @media (min-width: 768px) {
   /* column spans to take more than 1 column */
   .grc-md-1 {
-    grid-column: 1;
+    grid-column: span 1;
   }
   .grc-md-2 {
     grid-column: span 2;
@@ -68,7 +68,7 @@
   }
   /* same for rows */
   .grr-md-1 {
-    grid-row: 1;
+    grid-row: span 1;
   }
   .grr-md-2 {
     grid-row: span 2;
@@ -87,12 +87,12 @@
   }
 }
 
-// Large devices (desktops, 992px and up)
+/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
   /* column spans to take more than 1 column */
   .grc-xl-1 {
-    grid-column: 1;
+    grid-column: span 1;
   }
   .grc-lg-2 {
     grid-column: span 2;
@@ -111,7 +111,7 @@
   }
   /* same for rows */
   .grr-lg-1 {
-    grid-row: 1;
+    grid-row: span 1;
   }
   .grr-lg-2 {
     grid-row: span 2;
@@ -131,12 +131,12 @@
 
 }
 
-// Extra large devices (large desktops, 1200px and up)
+/* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
   /* column spans to take more than 1 column */
   .grc-lg-1 {
-    grid-column: 1;
+    grid-column: span 1;
   }
   .grc-xl-2 {
     grid-column: span 2;
@@ -155,7 +155,7 @@
   }
   /* same for rows */
   .grr-xl-1 {
-    grid-row: 1;
+    grid-row: span 1;
   }
   .grr-xl-2 {
     grid-row: span 2;

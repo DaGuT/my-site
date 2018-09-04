@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import drawBlocks from '../../../misc/drawBlocks'
+import drawBlocks from '../../../misc/drawBlocks';
 
 /**
  * This is react class for our index page
