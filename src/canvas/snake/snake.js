@@ -52,9 +52,9 @@ class Snake {
    * draw - first it updates  segment position  from head to tail and then draws it. And does it with each element
    *
    */
-  draw() {
+  draw(isAnother) {
     this.segments.forEach((segment) => {
-      segment.update();
+      if (!isAnother) segment.update(); //we dont update other player's snakes, as we get their location calculated
       segment.draw();
     });
   }
