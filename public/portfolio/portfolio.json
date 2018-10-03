@@ -37,6 +37,7 @@
   },
   {
     "sitename": "GeoCalc",
+    "sitedesc": "change to HTTP to work" ,
     "imgSrc": "./portfolio/assets/img/geocalc.png",
     "src": "http://geocalc.am.tpu.ru",
     "time": 1529048413,
@@ -67,7 +68,7 @@
   {
     "sitename": "Crypto-Converter",
     "imgSrc": "./portfolio/assets/img/crypto.PNG",
-    "src": "https://crypto-converter.ru/",
+    "src": "//crypto-converter.ru/",
     "time": 1529048413,
     "labels": ["wordpress", "backend", "template", "app", "script"],
     "rows": 3,

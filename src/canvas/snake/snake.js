@@ -20,9 +20,11 @@ class Snake {
     this.segments = [];
 
     //head is mouse for PC and acceleration sensor for touch
-    let head=(typeof window.orientation !== 'undefined') ? 'touch': 'mouse';
+    let head = (typeof window.orientation !== 'undefined')
+      ? 'touch'
+      : 'mouse';
 
-    //mouse following head
+    //mouse/ball following head
     this.segments.push(new Segment({
       //initial position
       x: p5.width / 2,
@@ -52,11 +54,30 @@ class Snake {
    * draw - first it updates  segment position  from head to tail and then draws it. And does it with each element
    *
    */
-  draw(isAnother) {
+  draw() { //we usually dont pass anything, so it's fine. We only pass argument when we draw other's snakes
     this.segments.forEach((segment) => {
-      if (!isAnother) segment.update(); //we dont update other player's snakes, as we get their location calculated
+      segment.update(); 
       segment.draw();
     });
+  }
+
+  //we generate JSON data made of our segments with data necessary for drawing with Segment.draw.bind(segmentData)
+  generateJSON() {
+    let segJSON = [];
+    this.segments.forEach((segment) => {
+      segJSON.push({
+        a: {
+          x: segment.a.x,
+          y: segment.a.y
+        },
+        b: {
+          x:segment.b.x,
+          y:segment.b.y
+        },
+        sw: segment.sw
+      });
+    });
+    return segJSON;
   }
 }
 

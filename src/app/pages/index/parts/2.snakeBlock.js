@@ -18,6 +18,7 @@ function snakeBlock() {
     <div className="heading top align-self-center ">
       <h1>DaGuT.Ru</h1>
       <h2>This site is about me and contains my (mini)projects</h2>
+      <h5>What you see now will change. It's just a skeleton ATM to test myself</h5>
     </div>
   </div>);
 }
@@ -29,7 +30,7 @@ function snakeBlock() {
  function later() {
   //we spawn our snake in #Snake taking its full size
   let snakeId = 'Snake';
-  new p5(snakeSketch(snakeId), snakeId);
+  new p5(snakeSketch(snakeId,'http://localhost:2999'), snakeId);
 }
 
 

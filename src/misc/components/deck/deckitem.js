@@ -9,7 +9,7 @@ class Deckitem extends Component {
     super(props);
   }
   render() {
-    return (<a href={this.props.item.src} key={this.props.item.key} className={"grr-" + (
+    return (<div href={this.props.item.src} key={this.props.item.key} className={"grr-" + (
       this.props.item.rows || 1) + " grc-" + (
       this.props.item.cols || 1) + " pf-item" + " with-overlay mf-popup"} style={{
         'backgroundImage' : "url(" + this.props.item.imgSrc + ")"
@@ -20,7 +20,7 @@ class Deckitem extends Component {
       }}></div>
         </div>
       </div>
-    </a>);
+    </div>);
 
   };
 }

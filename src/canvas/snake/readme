@@ -2,13 +2,15 @@ If you want, you can just easily spawn snake canvas anywhere.
 
 All you need to do is include sketch.js (and copy all the files from snake folder) in you file where you'll spawn it, and then add
 this code below and replace YourID with your element ID where snake will spawn. That's it. Easy as that.
+And if you want to have multiplayer snake - feel free to add socketServer, if you dont want - dont pass it to p5()
 
 
 --------------------------
 
 //js
 let snakeId = 'YourID';
-new p5(snakeSketch(snakeId), snakeId);
+let socketServer = 'YourServer'; //e.g. 'http://localhost:3000'
+new p5(snakeSketch(snakeId,socketServer), snakeId);
 
 //Plus  this code to css
 #YourID {

@@ -2,7 +2,7 @@ import p5 from 'p5'
 import $ from 'jquery'
 import './sketch.css'
 import onVisibilityChange from '../../misc/onVisibilityChange'
-
+import io from 'socket.io-client';
 import Snake from './snake.js'
 
 /**
@@ -11,12 +11,14 @@ import Snake from './snake.js'
  * @param  {string} snakeElementId_ ID of element that snake sketch should be inserted to
  * @return {function}                 p5 sketch
  */
-function snakeSketch(snakeElementId_) {
+function snakeSketch(snakeElementId_, server) {
 
   return(p5) => {
 
     window.p5 = p5;
-    let snake;
+    let snake; //our snake
+    let snakes = []; //others' snakes segments
+    let socket; //for socket storing in case of multiplayer snake
 
     //We make it locally available so that it works properly in returned function
     let snakeElementId = snakeElementId_;
@@ -52,6 +54,23 @@ function snakeSketch(snakeElementId_) {
       } else {
         snake = new Snake(100, 10, 3, 20);
       }
+
+      //if we want to work is multiplayer snake, everything (sockets) is inside of this if
+      if (server) {
+        socket = io(server); //we connect to the server
+
+        socket.on('connect', () => {
+          console.log('connected');
+          socket.emit('add snake', snake.generateJSON()); //we send our snake when we connected
+          console.log('snake sent');
+        });
+
+        socket.on('snake moved', (_snakes) => {
+          snakes = _snakes;
+        })
+
+      }
+
     }
 
     /**
@@ -67,7 +86,20 @@ function snakeSketch(snakeElementId_) {
     p5.draw = () => {
       p5.clear();
       //p5.background('rgba(0,0,0,0)');
-      snake.draw();
+      snake.draw(); //we draw our own snake
+
+      if (socket) { //if we have muplitlayer snake, we shoud send our snake to the server and draw other snakes
+
+        socket.emit('snake update', snake.generateJSON()); //we send our updated snake. Needs to be changed so that we dont send the data if we are not active
+        //now we draw other snakes
+
+        //We'll be drowing snake by snake
+        for (let snk in snakes) {
+          if (snk != socket.id) {
+            snakes[snk].forEach((segment) => {snake.segments[0].draw.call(segment);});
+          }
+        }
+      }
     }
 
   }

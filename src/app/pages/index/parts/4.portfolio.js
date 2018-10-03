@@ -27,7 +27,13 @@ function Portfolio() {
  * export later - executed after dom is loaded
  *
  */
-function later() {}
+function later() {
+  $('.changed-pointer a').click(function(event){ //in case if there is a link in the description, it should work. Without this it will just propogate the event and open popup
+  console.log('fck');
+  event.preventDefault();
+    event.stopImmediatePropagation();
+});
+}
 
 export {
   params

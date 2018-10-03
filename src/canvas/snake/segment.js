@@ -33,11 +33,13 @@ class Segment {
     this.calculateB();
 
     //in touch mode we need to create special ball that will react on tilt instead of mouse
-    if (params.next==='touch') {
-        this.ball=new TouchBall(params.x,params.y,p5);
+    if (params.next === 'touch') {
+      this.ball = new TouchBall(params.x, params.y, p5);
     }
 
     this.next = params.next;
+
+    this._draw=this.draw;
   }
 
   /**
