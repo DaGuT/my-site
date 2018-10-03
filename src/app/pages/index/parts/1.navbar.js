@@ -1,4 +1,4 @@
-import React, { Component}  from 'react';
+import React  from 'react';
 import * as spongeGif from '../../../../img/sb.gif';
 import $ from 'jquery';
 import Navbar from '../../../../misc/components/navbar/navbar';
@@ -15,7 +15,7 @@ let params = {
  * @return {DOM block}  whole navigation block
  */
 function navbar() {
-  return (<Navbar params={params} brand='DaGuT.Ru' linksList={[{link:'#',name:'Link 1'},{link:'#',name:'Link 2'}]} />);
+  return (<Navbar params={params} brand='DaGuT.Ru' linksList={[{link:'#1',name:'Link 1'},{link:'#1',name:'Link 2'}]} />);
 }
 
 /**

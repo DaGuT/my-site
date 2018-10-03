@@ -4,12 +4,6 @@ import Slideout from "slideout";
 
 class Navbar extends Component {
 
-  constructor(props) {
-     super(props);
-
-   }
-
-
    componentDidMount() {
 
      //sideout place

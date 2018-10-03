@@ -114,7 +114,7 @@ function snakeSketch(snakeElementId_, server) {
 
         //We'll be drowing snake by snake
         for (let snk in snakes) {
-          if (snk != socket.id) {
+          if (snk !== socket.id) {
             snakes[snk].forEach((segment) => {snake.segments[0].draw.call(segment);});
           }
         }

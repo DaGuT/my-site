@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import firefallPic from '../../../../img/firefall.png';
 import '../../main.css';
 import Sortable from 'sortablejs';
@@ -21,7 +21,7 @@ function aboutMe(resort) {
 
       <div className="col-lg-4 row no-margin d-none">
         <div className="col-md-6 offset-md-3 box mb-3">
-          <img className="rounded-circle box-content" src={firefallPic}/>
+          <img alt="Sponge Bob dancing" className="rounded-circle box-content" src={firefallPic}/>
         </div>
         <div className="col-12">
           <h3>Omg,It's FIREFALL!!!!</h3>
@@ -37,7 +37,7 @@ function aboutMe(resort) {
 
       <div className="col-lg-4 row no-margin d-none">
         <div className="col-md-6 offset-md-3 box mb-3">
-          <img className="rounded-circle box-content" src={firefallPic}/>
+          <img alt="some firefall pic" className="rounded-circle box-content" src={firefallPic}/>
         </div>
         <div className="col-12">
           <h3>Omg,It's FIREFALL!!!!</h3>
@@ -51,7 +51,7 @@ function aboutMe(resort) {
 function later(resort) {
   var el = document.getElementById('sortableList');
 
-  var sortable = Sortable.create(el, {
+  Sortable.create(el, {
     animation: 150,
     onEnd: function(evt) { //typical blocks resort
       let blocks = window.indexBlocks;

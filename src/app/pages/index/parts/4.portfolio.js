@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Deck from '../../../../misc/components/deck/deck.js';
 import '../../main.css';
 import $ from 'jquery';
