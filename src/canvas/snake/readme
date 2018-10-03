@@ -4,6 +4,8 @@ All you need to do is include sketch.js (and copy all the files from snake folde
 this code below and replace YourID with your element ID where snake will spawn. That's it. Easy as that.
 And if you want to have multiplayer snake - feel free to add socketServer, if you dont want - dont pass it to p5()
 
+Server files are in server folder. Just feel free to run it via "node snake.js"
+
 
 --------------------------
 
