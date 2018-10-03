@@ -37,7 +37,7 @@ io.on('connection', (socket) => {
     snakes[socket.id] = snake; //we add this snake to the 'array'.
 
     // we let everyone know that there is a new snake (to update numUsers displayed)
-    socket.broadcast.emit('snake joined', {
+    io.emit('snake joined', {
       numSnakes //dis nice ES6 syntax
     });
   });

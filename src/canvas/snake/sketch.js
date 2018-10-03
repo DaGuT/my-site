@@ -18,6 +18,7 @@ function snakeSketch(snakeElementId_, server) {
     window.p5 = p5;
     let snake; //our snake
     let snakes = []; //others' snakes segments
+    let curOnline=-1;
     let socket; //for socket storing in case of multiplayer snake
 
     //We make it locally available so that it works properly in returned function
@@ -69,6 +70,19 @@ function snakeSketch(snakeElementId_, server) {
           snakes = _snakes;
         })
 
+        socket.on('snake joined',(data)=>{
+            console.log('snakes updated');
+            curOnline=data.numSnakes;
+        })
+
+        socket.on('snake left',(data)=>{
+            curOnline=data.numSnakes;
+        })
+
+        socket.on('disconnnect', ()=>{
+          curOnline=-1;
+        })
+
       }
 
     }
@@ -89,6 +103,11 @@ function snakeSketch(snakeElementId_, server) {
       snake.draw(); //we draw our own snake
 
       if (socket) { //if we have muplitlayer snake, we shoud send our snake to the server and draw other snakes
+
+        //we draw online players
+        p5.textSize(32);
+        p5.noStroke();
+        p5.text(curOnline === -1 ? 'You are offline' : `${curOnline} snakes online`, 10, 30);
 
         socket.emit('snake update', snake.generateJSON()); //we send our updated snake. Needs to be changed so that we dont send the data if we are not active
         //now we draw other snakes
