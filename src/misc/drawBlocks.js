@@ -7,11 +7,7 @@
  * @return {array of DOM blocks}
  */
 function drawBlocks() {
-  var dom=[];
-  window.indexBlocks.forEach((elem) => {
-    dom.push(elem.default());
-  });
-  return dom;
+  return window.indexBlocks.map(elem => elem.default());
 }
 
 export default drawBlocks;

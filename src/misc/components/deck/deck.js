@@ -53,11 +53,7 @@ class Deck extends Component {
   render() {
     //may be I should hide functions like this?
     function drawDeck(data) {
-      let list = [];
-      data.forEach((item) => {
-        list.push(<Deckitem item={item}/>);
-      });
-      return list;
+      return data.map(item => <Deckitem key={item.src} item={item}/>);
     }
 
     return (<div className="grid-container">{drawDeck(this.state.data)}</div>);
