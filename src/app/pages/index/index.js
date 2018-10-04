@@ -46,7 +46,6 @@ class IndexPage extends Component {
 
     return (<div>
       {drawBlocks()}
-      <p className="extraHigh"></p>
     </div>);
   }
 }

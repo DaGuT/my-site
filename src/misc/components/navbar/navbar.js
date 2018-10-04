@@ -34,7 +34,7 @@ class Navbar extends Component {
       * @return {type}      <li> list of links
       */
     function drawList(list) {
-      list.forEach(el => <li className="nav-item">
+      return list.map(el => <li key={el.link} className="nav-item">
         <a href={el.link} className="nav-link">{el.name}</a>
       </li>);
     }

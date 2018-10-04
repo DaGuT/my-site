@@ -14,7 +14,7 @@ let params = {
  *
  * @return {DOM block}  whole block about me
  */
-function aboutMe(resort) {
+function aboutMe() {
   return (<div id={params.blockID} key={params.blockID} className="container-fluid bg-light text-center p-md-5 pb-sm-5 pt-sm-5">
     <h1 className="col-md-6 offset-md-3 mb-5">Hola, test man!</h1>
     <div className="row">
@@ -28,7 +28,8 @@ function aboutMe(resort) {
         </div>
       </div>
 
-      <div className="offset-lg-4 col-lg-4 row"> { /* no-margin or offset-lg-4 */ }
+      <div className="offset-lg-4 col-lg-4 row">
+        {/* no-margin or offset-lg-4 */}
         <div className="col-md-6 offset-md-3 mb-3 nice-card pt-3">
           {printList()}
           <button className="btn mt-5 mb-3 btn-danger" id="resortButton">Resort and click ME!</button>
@@ -84,11 +85,10 @@ function later(resort) {
 function makeList(keyList) {
   let list = [];
 
-  window.indexBlocks.forEach((elem) => {
+  return window.indexBlocks.map((elem) => {
     let temp = elem.params.displayName;
-    list.push(<div className='col btn btn-info m-1' key={temp}>{temp}</div>);
+    return <div className='col btn btn-info m-1' key={temp}>{temp}</div>;
   });
-  return list;
 }
 
 function printList() {
