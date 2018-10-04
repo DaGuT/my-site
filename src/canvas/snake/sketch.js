@@ -53,9 +53,9 @@ function snakeSketch(snakeElementId_, server) {
       //------------------------------------------------------------------------------ MY SETUP BELOW
       // mobile phones are not that powerful, so we make different snake size
       if ((typeof window.orientation !== 'undefined')) {
-        snake = new Snake(3, 10, 3, 20, 100);
-      } else {
         snake = new Snake(3, 10, 3, 20, 30);
+      } else {
+        snake = new Snake(3, 10, 3, 20, 150);
       }
 
       //if we want to work is multiplayer snake, everything (sockets) is inside of this if
