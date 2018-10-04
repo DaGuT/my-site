@@ -14,6 +14,7 @@ class Segment {
    * @param  {float} params.y Y position of A point
    * @param  {float} params.len segment length
    * @param  {float} params.sw segment thickness
+   * @param  {float} params.col segment H color
    * @param  {(string|object)} params.next Specifies object that should be followed. It can be string="mouse" or one of other segments
    */
   constructor(params) {
@@ -29,6 +30,12 @@ class Segment {
     //stroke width for making it snake like
     this.sw = params.sw;
 
+    this.col = params.col || {
+      r: 255,
+      g: 255,
+      b: 255
+    };
+
     //we calculate end point
     this.calculateB();
 
@@ -39,7 +46,7 @@ class Segment {
 
     this.next = params.next;
 
-    this._draw=this.draw;
+    this._draw = this.draw;
   }
 
   /**
@@ -101,8 +108,10 @@ class Segment {
   draw() {
     var p5 = window.p5;
 
+    let col= this.col ? p5.color(this.col.r, this.col.g , this.col.b) : p5.color(255,255,255);
+
     //we draw line
-    p5.stroke(255);
+    p5.stroke(col); //it's for campability with old clients
     p5.strokeWeight(this.sw);
     p5.line(this.a.x, this.a.y, this.b.x, this.b.y);
 

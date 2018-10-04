@@ -1,8 +1,8 @@
 // Setup basic express server
 var express = require('express');
-var port = process.env.PORT || 3000;
-var server = require('http').createServer().listen(port+1, '0.0.0.0');
-var server = require('https').createServer().listen(port, '0.0.0.0');
+var port = process.env.PORT || 8080;
+var server = require('http').createServer().listen(port, '0.0.0.0');
+//var server = require('https').createServer().listen(port, '0.0.0.0');
 var io = require('socket.io')(server);
 
 server.listen(port, () => {
@@ -17,6 +17,11 @@ var numSnakes = 0; //in case if I would want to show connected users count
 var snakes = {}; //for storing all the snakes to broadcast later
 var timer = false; // for preventing spam with updates
 
+
+let maxX=1920;
+let maxY=700;
+var food = {x:rand(0,maxX),y:rand(0,maxY),r:20, color:{r:rand(0,255),g:rand(0,255),b:rand(0,255)}};
+
 //for each connection there is its own 'object'
 // server works with stringified JSON
 io.on('connection', (socket) => {
@@ -29,6 +34,10 @@ io.on('connection', (socket) => {
     if (isAdded)
       return; // if snake is already in the list we do nothing
     console.log('Snake was added');
+
+    socket.emit('spawn food',food);
+
+
     ++numSnakes; //we increase snake counter
     isAdded = true; //we say that we have added snake for the socket id
 
@@ -46,6 +55,13 @@ io.on('connection', (socket) => {
     snakes[socket.id] = snake; //we update our snakes array
     timedBroadcast(snakes);
   });
+
+  socket.on('food eaten',()=>{
+    food={x:rand(0,maxX),y:rand(0,maxY),r:20, color:{r:rand(0,255),g:rand(0,255),b:rand(0,255)}};
+    io.emit('spawn food',food);
+    console.log('new food: ',food);
+  });
+
 
   // when the user disconnects.. perform this
   socket.on('disconnect', () => {
@@ -79,3 +95,8 @@ function timedBroadcast(snakes) { //it will prevent updating snakes more often t
   }
 }
 //this is nice function that allows us to broadcast snakes only once per 20ms. This way we dont spam a lot with updates
+
+
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}

@@ -12,8 +12,8 @@ body {
 
 #Snake {
   height: 100vh;
-  color: black;
-  background: linear-gradient(rgb(255, 0, 193), rgb(73, 0, 255), rgb(0, 184, 255));
+  color: white;
+  background: black/*linear-gradient(rgb(255, 0, 193), rgb(73, 0, 255), rgb(0, 184, 255))*/;
   position: relative;
   /* fix for canvas background */
 }
@@ -106,13 +106,27 @@ body {
 }
 
 .nice-card {
-  border: 2px solid gray;
+  border: 1px solid #80808012;
   border-radius:15px;
-  box-shadow: 0 0 10px;
+  box-shadow: 0 0 0px;
   min-width:200px;
 }
 
+.aboutme {
+
+}
+
+.aboutme .btn-light:hover{
+  background: inherit;
+  border-color: #80808012;
+}
+
 .no-margin {
+  margin-left:0px !important;
+  margin-right:0px !important;
+}
+
+.no-margin-row > .row {
   margin-left:0px !important;
   margin-right:0px !important;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import firefallPic from '../../../../img/firefall.png';
+import dustBG from '../../../../img/dust_scratches.png';
 import '../../main.css';
 import Sortable from 'sortablejs';
 import $ from 'jquery';
@@ -15,35 +15,18 @@ let params = {
  * @return {DOM block}  whole block about me
  */
 function aboutMe() {
-  return (<div id={params.blockID} key={params.blockID} className="container-fluid bg-light text-center p-md-5 pb-sm-5 pt-sm-5">
-    <h1 className="col-md-6 offset-md-3 mb-5">Hola, test man!</h1>
+  return (<div id={params.blockID} key={params.blockID} className="container-fluid aboutme bg-light text-center p-md-5 pb-sm-5 pt-sm-5" style={{'backgroundImage':`url(${dustBG})`}}>
+    <h1 className="col-md-6 offset-md-3 mb-5">Dont like the order of blocks? Re-order!</h1>
     <div className="row">
 
-      <div className="col-lg-4 row no-margin d-none">
-        <div className="col-md-6 offset-md-3 box mb-3">
-          <img alt="Sponge Bob dancing" className="rounded-circle box-content" src={firefallPic}/>
-        </div>
-        <div className="col-12">
-          <h3>Omg,It's FIREFALL!!!!</h3>
-        </div>
-      </div>
 
-      <div className="offset-lg-4 col-lg-4 row">
-        {/* no-margin or offset-lg-4 */}
-        <div className="col-md-6 offset-md-3 mb-3 nice-card pt-3">
+      <div className="offset-md-2 col-md-8 offset-lg-3 col-lg-6 offset-xl-4 col-xl-4">
+        <div className="col-12 mb-3 bg-light helper nice-card pt-3">
           {printList()}
-          <button className="btn mt-5 mb-3 btn-danger" id="resortButton">Resort and click ME!</button>
+          <button className="btn mt-5 mb-3 btn-light" id="resortButton">Resort and click ME!</button>
         </div>
       </div>
 
-      <div className="col-lg-4 row no-margin d-none">
-        <div className="col-md-6 offset-md-3 box mb-3">
-          <img alt="some firefall pic" className="rounded-circle box-content" src={firefallPic}/>
-        </div>
-        <div className="col-12">
-          <h3>Omg,It's FIREFALL!!!!</h3>
-        </div>
-      </div>
 
     </div>
   </div>);
@@ -87,7 +70,7 @@ function makeList(keyList) {
 
   return window.indexBlocks.map((elem) => {
     let temp = elem.params.displayName;
-    return <div className='col btn btn-info m-1' key={temp}>{temp}</div>;
+    return <div className='col btn btn-light m-1' key={temp}>{temp}</div>;
   });
 }
 

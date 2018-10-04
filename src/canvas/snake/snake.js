@@ -1,4 +1,5 @@
-import Segment from './segment'
+import Segment from './segment';
+import Food from './food';
 
 /**
  * this is snake itself that connects segments and make them redraw propely
@@ -14,10 +15,16 @@ class Snake {
    * @param  {float} minThickness the most thinnest part of snake will have this thickness
    * @param  {float} maxThickness the most fattest part of snake will have this thickness.
    */
-  constructor(segCount, segLen, minThickness, maxThickness) {
+  constructor(segCount, segLen, minThickness, maxThickness, maxLength) {
     var p5 = window.p5;
 
     this.segments = [];
+
+    this.segLen=segLen;
+    this.segCount=segCount;
+    this.minThickness=minThickness;
+    this.maxThickness=maxThickness;
+    this.maxLength = maxLength;
 
     //head is mouse for PC and acceleration sensor for touch
     let head = (typeof window.orientation !== 'undefined')
@@ -30,7 +37,7 @@ class Snake {
       x: p5.width / 2,
       y: p5.height / 2,
       //thickness of that part
-      sw: p5.map(segCount, 0, segCount, minThickness, maxThickness),
+      sw: maxThickness,
       //segment length
       len: segLen,
       //what this segment should follow
@@ -39,15 +46,25 @@ class Snake {
 
     //all other segments following each other
     for (let i = 1; i < segCount; ++i) {
-      this.segments.push(new Segment({
-        x: p5.width / 2,
-        y: p5.height / 2,
-        //exactly reversed order, It looks way cooler than normal snake stuff
-        sw: p5.map(i, 0, segCount, minThickness, maxThickness),
-        len: segLen,
-        next: this.segments[i - 1]
-      }));
+      this.grow();
     }
+  }
+
+  grow(col) {
+    var p5 = window.p5;
+    let i=this.segments.length;
+
+    if (i>=this.maxLength) return; //we dont grow if we have reached maximum len
+
+    this.segments.push(new Segment({
+      x: p5.width / 2,
+      y: p5.height / 2,
+      //exactly reversed order, It looks way cooler than normal snake stuff
+      sw: p5.map(i, 0, this.maxLength, this.minThickness, this.maxThickness),
+      len: this.segLen,
+      col: col,
+      next: this.segments[i - 1]
+    }));
   }
 
   /**
@@ -56,9 +73,28 @@ class Snake {
    */
   draw() { //we usually dont pass anything, so it's fine. We only pass argument when we draw other's snakes
     this.segments.forEach((segment) => {
-      segment.update(); 
+      segment.update();
       segment.draw();
     });
+  }
+
+
+  //for offline we use this function to check if we have ate the food
+  eat(food) {
+    if (food.eaten) return; //there is a 50ms delay, so you can eat food multiple times. To prevent that we check if we have not ate it to continue
+    let p5=window.p5;
+
+    //if we have hit the food, we consume it and grow
+    if ((Math.pow((food.pos.x-this.segments[0].b.x),2)+Math.pow((food.pos.y-this.segments[0].b.y),2))<(Math.pow(Math.max(food.r,this.segments[0].sw),2))) { //basic euclidian distance
+      this.grow(food.col);
+      food.eaten=true;
+
+      if (this.socket) {//if we're online
+        this.socket.emit('food eaten');
+      } else { //if we're offline then we spawn new food
+        food = new Food(p5.random(0, p5.width), p5.random(0, p5.height), 20, p5.color(p5.random(1, 255), p5.random(1, 255), p5.random(1, 255)));
+      }
+    }
   }
 
   //we generate JSON data made of our segments with data necessary for drawing with Segment.draw.bind(segmentData)
@@ -74,7 +110,8 @@ class Snake {
           x:segment.b.x,
           y:segment.b.y
         },
-        sw: segment.sw
+        sw: segment.sw,
+        col:segment.col
       });
     });
     return segJSON;
