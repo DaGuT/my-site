@@ -95,6 +95,10 @@ function snakeSketch(snakeElementId_, server) {
           food = new Food(_food.x,_food.y,_food.r,{r:_food.color.r,g:_food.color.g,b:_food.color.b});
         })
 
+        socket.on('connect_error', ()=> {
+          food = new Food(p5.random(0, p5.width), p5.random(0, p5.height), 20, {r:p5.random(1, 255), g:p5.random(1, 255), b:p5.random(1, 255)});
+        })
+
       } else { //offline only mode
         food = new Food(p5.random(0, p5.width), p5.random(0, p5.height), 20, {r:p5.random(1, 255), g:p5.random(1, 255), b:p5.random(1, 255)});
       }

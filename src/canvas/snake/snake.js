@@ -88,11 +88,14 @@ class Snake {
     if ((Math.pow((food.pos.x-this.segments[0].b.x),2)+Math.pow((food.pos.y-this.segments[0].b.y),2))<(Math.pow(Math.max(food.r,this.segments[0].sw),2))) { //basic euclidian distance
       this.grow(food.col);
       food.eaten=true;
-
-      if (this.socket) {//if we're online
+      if (this.socket && this.socket.connected) {//if we're online
+        console.log('ha');
         this.socket.emit('food eaten');
+        return;
       } else { //if we're offline then we spawn new food
-        food = new Food(p5.random(0, p5.width), p5.random(0, p5.height), 20, p5.color(p5.random(1, 255), p5.random(1, 255), p5.random(1, 255)));
+        let _food = new Food(p5.random(0, p5.width), p5.random(0, p5.height), 20, {r:p5.random(1, 255), g:p5.random(1, 255), b:p5.random(1, 255)});
+        [food.pos.x,food.pos.y,food.r,food.col] = [_food.pos.x,_food.pos.y,_food.r,_food.col];
+        food.eaten=false;
       }
     }
   }
