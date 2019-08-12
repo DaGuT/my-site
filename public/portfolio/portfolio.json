@@ -93,5 +93,19 @@
     "labels": ["landing", "made with brackets", ""],
     "rows": 3,
     "cols": 1
-  }
+  },
+    {
+      "sitename": "Генератор настенных карт",
+      "sitedesc": "Бесплатный генератор настенных карт",
+      "imgSrc": "./portfolio/assets/img/mapdagutru.png",
+      "src": "http://map.dagut.ru",
+      "time": 1565607384,
+      "labels": [
+        "one page app",
+        "jQuery",
+        "API"
+      ],
+      "rows": 2,
+      "cols": 3
+    }
 ]
