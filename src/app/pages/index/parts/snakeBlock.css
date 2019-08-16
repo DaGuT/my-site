@@ -1,48 +1,13 @@
-.coolTripletAnimation {
-    position:relative;
-    font-weight: bold;
-}
-
-.triplet-moving {
-    mix-blend-mode: lighten;
-}
-
-.triplet-moving.transition {
-    transition: transform 1s;
-}
-
-.coolTripletAnimation .triplet-moving {
+.top-right-text {
     position: absolute;
     top:0px;
-    left:0px;
-    width:100%;
+    right:0px;
 }
 
-
-.coolTripletAnimation .cyan {
-    color: #FF00FF;
-}
-
-.coolTripletAnimation .green {
-    color: #00FF00;
-}
-
-
-.coolTripletAnimation  .h1-like, .coolTripletAnimation  .h2-like, .coolTripletAnimation  .h5-like {
-    margin-bottom: .5rem;
-    font-weight: 500;
-    line-height: 1.2;
-    margin-top: 0;
-    display: block;
-}
-
-.coolTripletAnimation  .h1-like {
-    font-size:2.5rem;
-}
-.coolTripletAnimation  .h2-like {
-    font-size:2rem;
-}
-.coolTripletAnimation  .h5-like {
-    font-size:1.25rem;
-}
-
+#Snake {
+    height: 100vh;
+    color: white;
+    background: black/*linear-gradient(rgb(255, 0, 193), rgb(73, 0, 255), rgb(0, 184, 255))*/;
+    position: relative;
+    /* fix for canvas background */
+  }

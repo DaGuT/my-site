@@ -10,13 +10,7 @@ body {
   z-index: 999;
 }
 
-#Snake {
-  height: 100vh;
-  color: white;
-  background: black/*linear-gradient(rgb(255, 0, 193), rgb(73, 0, 255), rgb(0, 184, 255))*/;
-  position: relative;
-  /* fix for canvas background */
-}
+
 
 .slideout-menu {
   position: fixed;
