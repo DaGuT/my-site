@@ -1,8 +1,8 @@
-import React, {Component} from './node_modules/react';
-import $ from './node_modules/jquery';
+import React, {Component} from 'react';
+import $ from 'jquery';
 import './sidebar.css'
-import Slideout from "./node_modules/slideout";
-import './node_modules/bootstrap/dist/css/bootstrap.min.css';
+import Slideout from "slideout";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Sidebar extends Component {
 
