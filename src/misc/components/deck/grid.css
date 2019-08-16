@@ -91,7 +91,7 @@
 @media (min-width: 992px) {
 
   /* column spans to take more than 1 column */
-  .grc-xl-1 {
+  .grc-lg-1 {
     grid-column: span 1;
   }
   .grc-lg-2 {
@@ -135,7 +135,7 @@
 @media (min-width: 1200px) {
 
   /* column spans to take more than 1 column */
-  .grc-lg-1 {
+  .grc-xl-1 {
     grid-column: span 1;
   }
   .grc-xl-2 {
