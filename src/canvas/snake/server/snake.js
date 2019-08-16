@@ -1,8 +1,8 @@
 // Setup basic express server
 var express = require('express');
 var port = process.env.PORT || 8080;
-var server = require('http').createServer().listen(port, '0.0.0.0');
-//var server = require('https').createServer().listen(port, '0.0.0.0');
+// var server = require('http').createServer().listen(port, '0.0.0.0');
+var server = require('https').createServer().listen(port, '0.0.0.0');
 var io = require('socket.io')(server);
 
 server.listen(port, () => {

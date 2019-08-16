@@ -129,7 +129,7 @@ function snakeSketch(snakeElementId_, server) {
         p5.noStroke();
         p5.text(
           curOnline === -1
-          ? 'You are offline'
+          ? 'Snake server is down'
           : `${curOnline} snakes online`,
         10,
         30);
