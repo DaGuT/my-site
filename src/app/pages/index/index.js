@@ -19,7 +19,10 @@ class IndexPage extends Component {
     window.indexBlocks = [];
 
     blocks.keys().forEach((key) => {
-      window.indexBlocks.push(blocks(key));
+      //we can disable some block by just adding _ at the begining of the filename 
+      if (key[key.indexOf("/")+1] !== "_") {
+        window.indexBlocks.push(blocks(key));
+      }
     });
 
   }
@@ -34,20 +37,20 @@ class IndexPage extends Component {
     //if there are function that require to be executed after DOM is loaded, here we execute them
     window.indexBlocks.forEach((elem) => {
       if (elem.later)
-        if (elem.params.blockID === "aboutMe") {
+        if (elem.params.blockID === "reorderBlock") {
           elem.later(this.resort)
         } else
           elem.later();
-        }
-      );
+    });
   }
 
   render() {
 
-    return (<div>
-      {drawBlocks()}
+    return ( 
+    <div> 
+      {drawBlocks()} 
     </div>);
+    }
   }
-}
 
-export default IndexPage;
+  export default IndexPage;

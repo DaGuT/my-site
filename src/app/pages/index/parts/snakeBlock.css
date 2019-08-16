@@ -1,0 +1,48 @@
+.coolTripletAnimation {
+    position:relative;
+    font-weight: bold;
+}
+
+.triplet-moving {
+    mix-blend-mode: lighten;
+}
+
+.triplet-moving.transition {
+    transition: transform 1s;
+}
+
+.coolTripletAnimation .triplet-moving {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+}
+
+
+.coolTripletAnimation .cyan {
+    color: #FF00FF;
+}
+
+.coolTripletAnimation .green {
+    color: #00FF00;
+}
+
+
+.coolTripletAnimation  .h1-like, .coolTripletAnimation  .h2-like, .coolTripletAnimation  .h5-like {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0;
+    display: block;
+}
+
+.coolTripletAnimation  .h1-like {
+    font-size:2.5rem;
+}
+.coolTripletAnimation  .h2-like {
+    font-size:2rem;
+}
+.coolTripletAnimation  .h5-like {
+    font-size:1.25rem;
+}
+
