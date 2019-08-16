@@ -1,8 +1,17 @@
 // Setup basic express server
 var express = require('express');
+var fs = require('fs');
+
 var port = process.env.PORT || 8080;
-// var server = require('http').createServer().listen(port, '0.0.0.0');
-var server = require('https').createServer().listen(port, '0.0.0.0');
+
+//sert loading
+var options = {
+  key: fs.readFileSync('./sslforfree/private.key'),
+  cert: fs.readFileSync('./sslforfree/certificate.crt'),
+};
+
+var server = require('https').createServer(options).listen(port, '0.0.0.0');
+
 var io = require('socket.io')(server);
 
 server.listen(port, () => {
@@ -72,7 +81,9 @@ io.on('connection', (socket) => {
       delete snakes[socket.id]; //we delete snake upon disconnect, as I have told at the beggining
 
       // echo globally that this client has left
-      io.emit('snake left', {numSnakes});
+      io.emit('snake left', {
+        numSnakes
+      });
     }
   });
 });
@@ -109,7 +120,7 @@ function getRandomFood() {
 }
 
 function makeFood() {
-  food=getRandomFood();
+  food = getRandomFood();
   io.emit('spawn food', food);
   foodTimer = setInterval(() => {
     food = getRandomFood();

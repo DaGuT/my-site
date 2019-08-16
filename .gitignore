@@ -9,6 +9,9 @@
 # production
 /build
 
+#sert keys for server
+/src/canvas/snake/server/sslforfree
+
 # misc
 .DS_Store
 .env.local
