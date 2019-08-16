@@ -85,6 +85,10 @@ io.on('connection', (socket) => {
         numSnakes
       });
     }
+    //in case if some snake is stuck, we clear it after every1 left
+    if (numSnakes===0) {
+      snakes = {}
+    }
   });
 });
 

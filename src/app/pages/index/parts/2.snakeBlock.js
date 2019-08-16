@@ -29,7 +29,7 @@ function snakeBlock() {
           readMouseFrom={"#" + params.blockID}
           relativeTo="top-right"
           id="coolTripletText">
-          <h1>DaGuT.Ru</h1>
+          <h2>DaGuT.Ru</h2>
         </TripletText>
       </div>
     </div>
