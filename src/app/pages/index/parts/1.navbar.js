@@ -1,7 +1,7 @@
 import React  from 'react';
 import * as spongeGif from '../../../../img/sb.gif';
 import $ from 'jquery';
-import Navbar from '../../../../misc/components/navbar/navbar';
+import Navbar from '../../../../misc/components/navbar';
 
 let params = {
   'displayName': 'Navigation bar',

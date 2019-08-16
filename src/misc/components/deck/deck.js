@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Deckitem from './deckitem.js';
+import Deckitem from './Deckitem.js';
 import './grid.css';
 import $ from 'jquery';
 import "magnific-popup";

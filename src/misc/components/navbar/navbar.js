@@ -1,6 +1,6 @@
-import $ from 'jquery';
-import React, {Component} from 'react';
-import Slideout from "slideout";
+import $ from './node_modules/jquery';
+import React, {Component} from './node_modules/react';
+import Slideout from "./node_modules/slideout";
 
 class Navbar extends Component {
 

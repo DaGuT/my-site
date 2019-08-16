@@ -30,8 +30,8 @@ function snakeBlock() {
  function later() {
   //we spawn our snake in #Snake taking its full size
   let snakeId = 'Snake';
-  new p5(snakeSketch(snakeId,'https://snake.dagut.ru'), snakeId);
-  //new p5(snakeSketch(snakeId,'http://localhost:8080'), snakeId);
+  new p5(snakeSketch(snakeId, 'https://snake.dagut.ru:8080'), snakeId);
+  // new p5(snakeSketch(snakeId,'http://localhost:8080'), snakeId);
 }
 
 

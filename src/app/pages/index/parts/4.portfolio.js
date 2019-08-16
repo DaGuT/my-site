@@ -1,5 +1,5 @@
 import React from 'react';
-import Deck from '../../../../misc/components/deck/deck.js';
+import Deck from '../../../../misc/components/Deck';
 import '../../main.css';
 import $ from 'jquery';
 
