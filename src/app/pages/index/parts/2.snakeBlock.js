@@ -2,6 +2,7 @@ import React from 'react';
 import p5 from 'p5';
 import snakeSketch from '../../../../canvas/snake/sketch';
 import TripletText from '../../../../misc/components/TripletText';
+import ReplacebleComponent from '../../../../misc/components/ReplacebleComponent';
 import './snakeBlock.css';
 
 let params = {
@@ -9,45 +10,24 @@ let params = {
   'blockID': 'Snake'
 };
 
-//Div that I need to pass as a Component property as initial component
-const Div = ({children,...props}) => (
-  <div {...props}>{children}</div>
-);
-
-//this class is used to create Component that will change its component upon click with a new one that is passed as props
-class ReplacableDesc extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      Component: Div,
-      params: {onClick:this.changeComponent}
+// Div from example in ReplacableComponent desc array of components that I've
+// describer above for replacablecomponent
+const components = [
+  {
+    component: 'div',
+    props: {
+      eventName: 'onClick'
+    }
+  }, {
+    component: TripletText,
+    props: {
+      eventName: 'none',
+      readMouseFrom: "#" + params.blockID,
+      relativeTo: "center",
+      id: "coolTripletTextInCenter"
     }
   }
-
-  changeComponent = () => {
-    this.setState({
-      Component: this.props.component,
-      params: {
-        readMouseFrom: "#" + params.blockID,
-        relativeTo: "center",
-        id: "coolTripletTextInCenter"
-      }
-    });
-  }
-
-  render() {
-    let Component = this.state.Component;
-    return (
-      <Component {...this.state.params}>
-        <div>
-          <h2>This site is about me and contains my (mini)projects</h2>
-          <h5>What you see now will change.It 's just a skeleton ATM to test myself</h5>
-        </div>
-      </Component>
-    );
-  }
-};
+]
 
 /**
  * snakeBlock - this is snakeBlock with heading of my site. It's private scope only
@@ -60,7 +40,14 @@ function snakeBlock() {
       id={params.blockID}
       key={params.blockID}
       className="text-center d-flex justify-content-center">
-      <div className="heading top align-self-center"><ReplacableDesc component={TripletText}/></div>
+      <div className="heading top align-self-center">
+        <ReplacebleComponent components={components}>
+          <div>
+            <h2>This site is about me and contains my (mini)projects</h2>
+            <h5>What you see now will change.It 's just a skeleton ATM to test myself</h5>
+          </div>
+        </ReplacebleComponent>
+      </div>
       <div className="top-right-text">
         <TripletText
           readMouseFrom={"#" + params.blockID}
