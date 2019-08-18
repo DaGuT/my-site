@@ -28,23 +28,29 @@ export default class ReplacableComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    // destructuring again so that we can take eventName and put it as prop name
-    // instead of prop value
-    let {
-      eventName,
-      ...restProps
-    } = this.props.components[0].props;
-
     this.currentComponent = 0; // this is internal counter
 
     this.state = {
       Component: this.props.components[0].component,
-      props: {
-        //this one is responsible for changing components
-        [eventName]: this.changeComponent,
-        //all other props
-        ...restProps
-      }
+      props: this.makeProperProps(props)
+    }
+  }
+
+  makeProperProps = (props, oldEvent) => {
+    // destructuring so that we can take eventName and put it as prop name
+    // instead of prop value
+    let {
+      eventName,
+      ...restProps
+    } = this.props.components[this.currentComponent].props;
+
+    return {
+      //we delete oldEvent if it exists
+      [oldEvent || '']: undefined,
+      //then we set new event for changing component
+      [eventName || 'onClick']: this.changeComponent,
+      //and we pass all other props
+      ...restProps
     }
   }
 
@@ -52,20 +58,10 @@ export default class ReplacableComponent extends React.Component {
     let oldEvent = this.props.components[this.currentComponent].props.eventName; //I store it so that I can delete it
     this.currentComponent = (this.currentComponent + 1) % this.props.components.length; //it's for looping thhrough all components that we've passed
     //whoops, code repetition
-    let {
-      eventName,
-      ...props
-    } = this.props.components[this.currentComponent].props;
+
     this.setState({
       Component: this.props.components[this.currentComponent].component,
-      props: {
-        //as I mentioned before, we delete oldEvent
-        [oldEvent]: undefined,
-        //then we set new event for changing component
-        [eventName]: this.changeComponent,
-        //and we pass all other props
-        ...props
-      }
+      props: this.makeProperProps(this.props.components[this.currentComponent].props,oldEvent)
     });
   }
 
@@ -80,6 +76,6 @@ export default class ReplacableComponent extends React.Component {
 ReplacableComponent.propTypes = {
   components: PropTypes.arrayOf(PropTypes.shape({
     component: PropTypes.any.isRequired, //it's just string or ReactComponent, I cant make it work with oneOfType
-    props: PropTypes.shape({eventName: PropTypes.string.isRequired})
+    props: PropTypes.shape({eventName: PropTypes.string})
   }))
 }
