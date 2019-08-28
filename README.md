@@ -1,4 +1,4 @@
-# This is my entire source code for my ex DaGuT.Ru site.
+# This was my entire source code for my DaGuT.Ru site. It's no longer used as it's now replaced with a new one that I started from scratch
 I dont have any special plans to use it(may be I do, but only as my Personal page), It's just made for learning purposes and to see if I can do things
 
 
