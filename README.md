@@ -1,8 +1,8 @@
-# This is my entire source code for my DaGuT.Ru site.
+# This was my entire source code for my DaGuT.Ru site. It's no longer used as it's now replaced with a new one that I started from scratch
 I dont have any special plans to use it(may be I do, but only as my Personal page), It's just made for learning purposes and to see if I can do things
 
 
-You can check working demo at [DaGuT.Ru (clickable)](https://dagut.ru/) (it's not always up to date)
+~~You can check working demo at [DaGuT.Ru (clickable)](https://dagut.ru/) (it's not always up to date)~~
 
 ## Special features:
 * React components that are built by me (feel free to use them in your project if you want. They are not too flexible, but at least they work)
