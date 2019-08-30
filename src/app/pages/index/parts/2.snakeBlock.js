@@ -1,6 +1,6 @@
 import React from 'react';
 import p5 from 'p5';
-import snakeSketch from '../../../../canvas/snake/sketch';
+import snakeSketch from 'p5-snake';
 import TripletText from '../../../../misc/components/TripletText';
 import ReplacebleComponent from '../../../../misc/components/ReplacebleComponent';
 import './snakeBlock.css';
