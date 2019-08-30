@@ -24,6 +24,12 @@ const components = [
 // ----------------And now component itself this class is used to create
 // Component that will change its component upon click with a new one that is
 // passed as props
+
+//you can always inherit it in a new class where you will add other functions or hooks. But this is the minimum that is required to make replacable component
+//application example (other than I have on my site) is upon clicking on table cell it will replace itself with a text field. Then you can add function to get text from text field and put it in table cell.
+
+//well, it's easier to just have a wrapper component that will (based on condition) render one or another thing, but I WANT THIS!
+
 export default class ReplacableComponent extends React.Component {
   constructor(props) {
     super(props);

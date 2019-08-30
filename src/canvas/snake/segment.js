@@ -17,11 +17,12 @@ class Segment {
    * @param  {float} params.col segment H color
    * @param  {(string|object)} params.next Specifies object that should be followed. It can be string="mouse" or one of other segments
    */
-  constructor(params) {
-    var p5 = window.p5;
+  constructor(params,p) {
     //start and end points
-    this.a = p5.createVector(params.x, params.y);
-    this.b = p5.createVector();
+    this.a = p.createVector(params.x, params.y);
+    this.b = p.createVector();
+
+    this.p = p;
 
     //polar coordinats
     this.angle = 0;
@@ -41,7 +42,7 @@ class Segment {
 
     //in touch mode we need to create special ball that will react on tilt instead of mouse
     if (params.next === 'touch') {
-      this.ball = new TouchBall(params.x, params.y, p5);
+      this.ball = new TouchBall(params.x, params.y, p);
     }
 
     this.next = params.next;
@@ -65,30 +66,28 @@ class Segment {
    *
    */
   follow() {
-    var p5 = window.p5;
-
     let target;
 
     //which point to follow
     switch (this.next) {
       case 'mouse':
-        target = p5.createVector(p5.mouseX, p5.mouseY);
+        target = this.p.createVector(this.p.mouseX, this.p.mouseY);
         break;
       case 'touch':
         this.ball.update();
-        target = p5.createVector(this.ball.x, this.ball.y);
+        target = this.p.createVector(this.ball.x, this.ball.y);
         break;
       default:
-        target = p5.createVector(this.next.a.x, this.next.a.y);
+        target = this.p.createVector(this.next.a.x, this.next.a.y);
         break;
     }
 
-    let dir = p5.createVector(target.x - this.a.x, target.y - this.a.y); //p5.Vector.sub(target, this.a);
+    let dir = this.p.createVector(target.x - this.a.x, target.y - this.a.y); //p.Vector.sub(target, this.a);
     this.angle = dir.heading();
     dir.setMag(this.len);
     dir.mult(-1);
 
-    this.a = p5.createVector(target.x + dir.x, target.y + dir.y); //p5.Vector.add(target, dir);
+    this.a = this.p.createVector(target.x + dir.x, target.y + dir.y); //p.Vector.add(target, dir);
 
   }
 
@@ -106,14 +105,14 @@ class Segment {
    *
    */
   draw() {
-    var p5 = window.p5;
+    var p = window.p;
 
-    let col= this.col ? p5.color(this.col.r, this.col.g , this.col.b) : p5.color(255,255,255);
+    let col= this.col ? this.p.color(this.col.r, this.col.g , this.col.b) : this.p.color(255,255,255);
 
     //we draw line
-    p5.stroke(col); //it's for campability with old clients
-    p5.strokeWeight(this.sw);
-    p5.line(this.a.x, this.a.y, this.b.x, this.b.y);
+    this.p.stroke(col); //it's for campability with old clients
+    this.p.strokeWeight(this.sw);
+    this.p.line(this.a.x, this.a.y, this.b.x, this.b.y);
 
   }
 

@@ -1,7 +1,3 @@
-import jQuery from 'jquery';
-
-
-
 /**
  * isElementInViewport - functino that shows if the element is in viewport
  *
@@ -11,9 +7,9 @@ import jQuery from 'jquery';
 export default function isElementInViewport(el) {
 
   //special bonus for those using jQuery
-  if (typeof jQuery === "function" && el instanceof jQuery) {
-    el = el[0];
-  }
+  // if (typeof jQuery === "function" && el instanceof jQuery) {
+  //   el = el[0];
+  // }
 
   var rect = el.getBoundingClientRect();
 

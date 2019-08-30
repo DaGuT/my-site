@@ -21,7 +21,7 @@ const components = [
   }, {
     component: TripletText,
     props: {
-      eventName: 'none',
+      eventName: 'None',
       readMouseFrom: "#" + params.blockID,
       relativeTo: "center",
       id: "coolTripletTextInCenter"

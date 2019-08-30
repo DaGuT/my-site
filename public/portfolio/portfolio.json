@@ -84,16 +84,6 @@
     "rows": 3,
     "cols": 1
   },
-  {
-    "sitename": "Сайт психолога-гипнотерапевта",
-    "sitedesc": "",
-    "imgSrc": "./portfolio/assets/img/psycho.jpg",
-    "src": "//www.moscowhypnosis.ru/",
-    "time": 1529048413,
-    "labels": ["landing", "made with brackets", ""],
-    "rows": 3,
-    "cols": 1
-  },
     {
       "sitename": "Генератор настенных карт",
       "sitedesc": "Бесплатный генератор настенных карт",
@@ -105,7 +95,7 @@
         "jQuery",
         "API"
       ],
-      "rows": 2,
-      "cols": 3
+      "rows": 3,
+      "cols": 1
     }
 ]
