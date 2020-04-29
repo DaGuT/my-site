@@ -5,7 +5,7 @@
   "homepage": ".",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "magnific-popup": "^1.1.0",
     "p5": "^0.7.2",
     "p5-snake": "^1.0.0",
